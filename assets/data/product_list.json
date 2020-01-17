@@ -1,0 +1,30 @@
+[
+  {
+    "id":1,
+    "name":"Nome produto 1",
+    "description": "Descrição do produto número 1",
+    "price":10.0,
+    "urlImagePath":"https://01.avoncdn.com/shop/media/4478787/m-aspot-2.jpg"
+  },
+  {
+    "id":2,
+    "name":"Nome produto 2",
+    "description": "Descrição do produto número 2",
+    "price":20.0,
+    "urlImagePath":"https://cdn.awsli.com.br/600x450/203/203077/produto/33821905/c405705e4b.jpg"
+  },
+  {
+    "id":3,
+    "name":"Nome produto 3",
+    "description": "Descrição do produto número 3",
+    "price":30.0,
+    "urlImagePath":"https://images-na.ssl-images-amazon.com/images/I/71SzDBdKVxL._SX425_.jpg"
+  },
+  {
+    "id":4,
+    "name":"Nome produto 4",
+    "description": "Descrição do produto número 4",
+    "price":40.0,
+    "urlImagePath":"https://www.shoptv.com.ph/media/catalog/product/cache/1/small_image/300x/6dcdb3bec3b7d3d8fa2d31ce95a0090e/6/0/60219801_-1.jpg"
+  }
+]
