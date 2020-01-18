@@ -1,5 +1,5 @@
+import 'package:desafio_jusbrasil_app/pages/main/main_page.dart';
 import 'package:desafio_jusbrasil_app/style/text_style.dart';
-import 'package:desafio_jusbrasil_app/test_view/test_product/list/test_list_loading_product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
             end: Alignment.bottomLeft,
             colors: [Colors.white, Colors.white12],
           ),
-          navigateAfterSeconds: TestProductListApp(),
+          navigateAfterSeconds: MyApp(),
           loaderColor: Colors.transparent,
         ),
         Container(

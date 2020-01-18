@@ -2,10 +2,10 @@ import 'package:desafio_jusbrasil_app/style/text_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
-class EmptyListPage extends StatelessWidget {
+class EmptyList extends StatelessWidget {
   String _message;
 
-  EmptyListPage(this._message);
+  EmptyList(this._message);
 
   @override
   Widget build(BuildContext context) {

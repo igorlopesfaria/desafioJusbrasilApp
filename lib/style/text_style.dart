@@ -10,7 +10,7 @@ TextStyle getErrorTitleTextStyle() {
       fontStyle: FontStyle.normal,
       fontFamily: 'Monteserrat',
       fontWeight: FontWeight.w300,
-      fontSize: 32);
+      fontSize: 24);
 }
 
 TextStyle getErrorSubTitleTextStyle() {

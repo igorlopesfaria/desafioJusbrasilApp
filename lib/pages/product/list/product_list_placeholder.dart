@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class ProductListLoading extends StatelessWidget {
+class ProductListPlaceholder extends StatelessWidget {
   List<double> list = [110.0, 120.0, 130.0, 140.0, 150.0, 160.0];
 
   @override
@@ -49,7 +49,7 @@ class ProductListLoading extends StatelessWidget {
                                               Container(
                                                 width: list[new Random()
                                                     .nextInt(list.length)],
-                                                height: 10.0,
+                                                height: 18.0,
                                                 color: Colors.white,
                                               ),
                                               new Padding(
@@ -57,7 +57,7 @@ class ProductListLoading extends StatelessWidget {
                                                       top: 3.0)),
                                               Container(
                                                 width: 70.0,
-                                                height: 10.0,
+                                                height: 15.0,
                                                 color: Colors.white,
                                               ),
                                             ]),
