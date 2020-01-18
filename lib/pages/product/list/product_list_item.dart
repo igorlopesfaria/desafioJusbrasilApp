@@ -23,6 +23,7 @@ class ProductListItem extends StatelessWidget {
                   _productModel.urlImagePath,
                   fit: BoxFit.fill,
                   height: 90,
+                  width: 90,
                 ),
               ),
               Container(
@@ -60,7 +61,7 @@ class ProductListItem extends StatelessWidget {
               )
             ],
           ),
-          onTap: selectItem(_productModel),
+          onTap: () => selectItem(_productModel),
         ));
   }
 }

@@ -6,9 +6,9 @@ import 'package:desafio_jusbrasil_app/sdk/data/response/product_response.dart';
 import 'package:desafio_jusbrasil_app/style/color.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(TestProductItemApp());
+void main() => runApp(TestProductListApp());
 
-class TestProductItemApp extends StatelessWidget {
+class TestProductListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

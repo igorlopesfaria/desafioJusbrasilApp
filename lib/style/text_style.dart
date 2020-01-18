@@ -96,13 +96,22 @@ TextStyle getGrayTitleBottomSheetStyle() {
       fontSize: 14);
 }
 
+TextStyle getBlackTitleBigStyle() {
+  return new TextStyle(
+      color: DarkColor,
+      fontStyle: FontStyle.normal,
+      fontFamily: 'Monteserrat',
+      fontWeight: FontWeight.w400,
+      fontSize: 26);
+}
+
 TextStyle getToolbarTitleTextStyle() {
   return new TextStyle(
       color: WhiteColor,
       fontStyle: FontStyle.normal,
       fontFamily: 'Monteserrat',
-      fontWeight: FontWeight.w700,
-      fontSize: 20);
+      fontWeight: FontWeight.w900,
+      fontSize: 18);
 }
 
 TextStyle getSearchHintTextStyle() {

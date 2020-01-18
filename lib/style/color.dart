@@ -12,13 +12,18 @@ const Color Gray60Color = Color(0x99242424);
 
 const Color PrimaryColor =  Color(0xFFFAC911);
 
+const Color PrimaryDarkColor =  Color(0xFFdbaf00);
+
+const Color BackgroundColor =  Color(0xFFEFF0F1);
+const Color BackgroundDarkColor =  Color(0xFFEFF0F1);
+
 const Color PrimaryColorLight =  Color(0xFFDEE9D8);
 
 const Color GreenSofitColor =  Color(0xFFDEE9D8);
 
 const Color GreenSofitDarkColor =  Color(0xFF75846B);
 
-const Color MainButtonColor =  Color(0xFF2B81B2);
+const Color MainButtonColor =  Color(0xFF78B441);
 
 const Color TextFieldDarkColor  = Color(0xFF242424);
 
