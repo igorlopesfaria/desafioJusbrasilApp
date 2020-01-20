@@ -63,21 +63,21 @@ class ProductItemTest extends StatelessWidget {
     "urlImagePath":"https://images-americanas.b2w.io/produtos/01/00/img/134232/5/134232595G1.jpg"
   },
   {
-    "id":2,
+    "id":6,
     "name":"Nome produto 6",
     "description": "Descrição do produto número 6",
     "price":20.0,
     "urlImagePath":"https://cdn.awsli.com.br/600x450/203/203077/produto/33821905/c405705e4b.jpg"
   },
   {
-    "id":3,
+    "id":7,
     "name":"Nome produto 7",
     "description": "Descrição do produto número 7",
     "price":30.0,
     "urlImagePath":"https://images-na.ssl-images-amazon.com/images/I/71SzDBdKVxL._SX425_.jpg"
   },
   {
-    "id":4,
+    "id":8,
     "name":"Nome produto 8",
     "description": "Descrição do produto número 8",
     "price":40.0,

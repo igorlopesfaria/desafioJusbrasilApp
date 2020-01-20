@@ -20,7 +20,7 @@ class ProductListItem extends StatelessWidget {
               Container(
                 margin: EdgeInsets.all(10.0),
                 child: new Image.network(
-                  _productModel.urlImagePath,
+                  _productModel.imagePath,
                   fit: BoxFit.fill,
                   height: 90,
                   width: 90,

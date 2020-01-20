@@ -8,7 +8,7 @@ class ProductModel extends Equatable {
   int id;
   String name;
   String description;
-  String urlImagePath;
+  String imagePath;
   double price;
 
   ProductModel(ProductResponse response){
@@ -16,11 +16,11 @@ class ProductModel extends Equatable {
     this.name = response.name;
     this.description = response.description;
     this.price = response.price;
-    this.urlImagePath = response.urlImagePath;
+    this.imagePath = response.imagePath;
   }
 
   @override
-  List<Object> get props => [id, name, description, urlImagePath, price];
+  List<Object> get props => [id, name, description, imagePath, price];
 
   String getPriceFormatMoney() {
     final oCcy = new NumberFormat("#,##0.00", "pt_BR");

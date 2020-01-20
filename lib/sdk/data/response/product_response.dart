@@ -4,17 +4,17 @@ class ProductResponse {
   int id;
   String name;
   String description;
-  String urlImagePath;
+  String imagePath;
   double price;
 
-  ProductResponse({this.id, this.name, this.description, this.urlImagePath, this.price});
+  ProductResponse({this.id, this.name, this.description, this.imagePath, this.price});
 
   factory ProductResponse.fromJSON(Map<String, dynamic> productResponseJson) {
     return new ProductResponse(
         id: productResponseJson['id'],
         name: productResponseJson['name'],
         description: productResponseJson['description'],
-        urlImagePath: productResponseJson['urlImagePath'],
+        imagePath: productResponseJson['imagePath'],
         price: productResponseJson['price']);
   }
 }

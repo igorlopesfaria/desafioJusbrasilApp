@@ -36,16 +36,7 @@ class _SplashPageState extends State<SplashPage> {
                   Container(
                       height: 150,
                       child: Image.asset("assets/images/ic_jus.png")),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      SvgPicture.asset("assets/images/ic_puzzle.svg",
-                          width: 42.0, height: 42.0),
-                      Padding(padding: new EdgeInsets.only(right: 10.0)),
-                      Text("Desafio Jus", style: getBlackTitleBigStyle())
-                    ],
-                  )
+                  Text("Desafio Jus", style: getBlackTitleBigStyle())
                 ],
               ), // Align however you like (i.e .centerRight, centerLeft)
             ))

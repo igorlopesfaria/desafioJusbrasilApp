@@ -1,13 +1,14 @@
 import 'package:desafio_jusbrasil_app/model/ProductList.dart';
 import 'package:desafio_jusbrasil_app/pages/comon_view/empty_list.dart';
 import 'package:desafio_jusbrasil_app/pages/comon_view/error_default.dart';
+import 'package:desafio_jusbrasil_app/pages/product/detail/product_detail_page.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/bloc/product_list_bloc.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list_placeholder.dart';
+import 'package:desafio_jusbrasil_app/style/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'bloc/product_list_events.dart';
 import 'bloc/product_list_states.dart';
@@ -28,22 +29,44 @@ class _ProductListPage extends State<ProductListPage> {
 
   Widget build(BuildContext context) {
     BlocProvider.of<ProductListBloc>(context);
-    return Scaffold(
-      appBar: _buildToolbar(context),
-      body: _buildMainContainer(context), //mainContainer,
-    );
+    return MaterialApp(
+        title: 'Desafio Jus',
+        theme: ThemeData(
+          primaryColor: PrimaryColor,
+        ),
+        home: Scaffold(
+          appBar: _buildToolbar(context),
+          drawer: Drawer(
+              child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              Padding(padding: new EdgeInsets.only(top: 20.0)),
+              ListTile(
+                leading: Icon(
+                  Icons.monetization_on,
+                ),
+                title: Text('Histórico de compras'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+            ],
+          )),
+
+          body: _buildMainContainer(context), //mainContainer,
+        ));
   }
 
   Widget _buildToolbar(BuildContext context) {
     return new AppBar(
       title: Text('Desafio Jus'),
-      leading: SvgPicture.asset("assets/images/ic_puzzle.svg",
-          width: 12.0, height: 12.0),
       actions: <Widget>[
         IconButton(
             icon: Icon(
               Icons.shopping_cart,
-              color: Colors.white,
+              color: Colors.black,
             ),
             onPressed: () => _goOrderProduct)
       ],
@@ -77,6 +100,9 @@ class _ProductListPage extends State<ProductListPage> {
   }
 
   void _productSelected(ProductModel productModel) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ProductDetail(productModel)));
     print("Selecionado produto" + productModel.name);
   }
 
