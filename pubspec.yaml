@@ -32,6 +32,7 @@ dependencies:
   equatable: ^0.6.0
   intl: ^0.15.6
   splashscreen: ^1.2.0
+  flutter_progress_button: ^0.6.4
 
 dev_dependencies:
   flutter_test:

@@ -4,6 +4,7 @@ import 'package:desafio_jusbrasil_app/style/color.dart';
 import 'package:desafio_jusbrasil_app/style/text_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_progress_button/flutter_progress_button.dart';
 
 class ProductDetail extends StatefulWidget {
   ProductModel _productModel;
@@ -42,6 +43,9 @@ class _ProductDetailState extends State<ProductDetail> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(children: [
+
+
+
                     Padding(padding: new EdgeInsets.only(top: 8.0)),
                     Container(
                       color: Colors.white,
