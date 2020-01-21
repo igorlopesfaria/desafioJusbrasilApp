@@ -1,4 +1,4 @@
-import 'package:desafio_jusbrasil_app/model/ProductList.dart';
+import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 

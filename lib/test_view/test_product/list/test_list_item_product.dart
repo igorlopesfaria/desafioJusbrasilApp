@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:desafio_jusbrasil_app/model/ProductList.dart';
+import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list_item.dart';
 import 'package:desafio_jusbrasil_app/sdk/data/response/product_response.dart';
 import 'package:desafio_jusbrasil_app/style/color.dart';

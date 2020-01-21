@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:desafio_jusbrasil_app/model/ProductList.dart';
+import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/bloc/product_list_events.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/bloc/product_list_states.dart';
 import 'package:desafio_jusbrasil_app/sdk/repository/product_repository.dart';
@@ -19,7 +19,7 @@ class ProductListBloc extends Bloc<ProductListEvents, ProductListStates> {
     if (event is FetchProduct) {
       yield ProductListLoading();
       try {
-        final listProduct = (await productRepository.fetchProductRepository())
+        final listProduct = (await productRepository.fetchProduct())
             .map(((value) => ProductModel(value)))
             .toList();
 

@@ -1,10 +1,11 @@
-import 'package:desafio_jusbrasil_app/model/ProductList.dart';
+import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
 import 'package:desafio_jusbrasil_app/pages/comon_view/empty_list.dart';
 import 'package:desafio_jusbrasil_app/pages/comon_view/error_default.dart';
 import 'package:desafio_jusbrasil_app/pages/product/detail/product_detail_page.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/bloc/product_list_bloc.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list_placeholder.dart';
+import 'package:desafio_jusbrasil_app/pages/product_order/product_order_builder.dart';
 import 'package:desafio_jusbrasil_app/style/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,7 @@ class _ProductListPage extends State<ProductListPage> {
               Icons.shopping_cart,
               color: Colors.black,
             ),
-            onPressed: () => _goOrderProduct)
+            onPressed: _goOrderProduct)
       ],
     );
   }
@@ -100,13 +101,15 @@ class _ProductListPage extends State<ProductListPage> {
   }
 
   void _productSelected(ProductModel productModel) {
-    Navigator.push(
-        context,
+    Navigator.push(context,
         MaterialPageRoute(builder: (context) => ProductDetail(productModel)));
     print("Selecionado produto" + productModel.name);
   }
 
   void _goOrderProduct() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => ProductOrderListBuilder()));
+
     print("Veja o carrinho de compras como está");
   }
 }

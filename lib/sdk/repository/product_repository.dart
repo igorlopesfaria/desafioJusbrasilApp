@@ -8,7 +8,7 @@ class ProductRepository {
   ProductRepository({@required this.client})
       : assert(client != null);
 
-  Future<List<ProductResponse>> fetchProductRepository() async {
+  Future<List<ProductResponse>> fetchProduct() async {
     return await client.fetchProduct();
   }
 }

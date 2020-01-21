@@ -1,5 +1,4 @@
-import 'package:desafio_jusbrasil_app/model/ProductList.dart';
-import 'package:desafio_jusbrasil_app/style/button_style.dart';
+import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
 import 'package:desafio_jusbrasil_app/style/color.dart';
 import 'package:desafio_jusbrasil_app/style/text_style.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,17 +34,15 @@ class _ProductDetailState extends State<ProductDetail> {
         ),
         home: Scaffold(
             appBar: AppBar(
-              title: Text("Detalhes do produto"),
-                leading: IconButton(icon:Icon(Icons.arrow_back),
-                  onPressed:() => Navigator.pop(context, false),
-                )            ),
+                title: Text("Detalhes do produto"),
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () => Navigator.pop(context, false),
+                )),
             body: Column(children: <Widget>[
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(children: [
-
-
-
                     Padding(padding: new EdgeInsets.only(top: 8.0)),
                     Container(
                       color: Colors.white,
@@ -101,14 +98,29 @@ class _ProductDetailState extends State<ProductDetail> {
                 padding: EdgeInsets.only(left: 20.0, right: 20.0),
                 child: new Align(
                   alignment: Alignment.center,
-                  child: ButtonTheme(
-                      minWidth: double.infinity,
-                      height: 45.0,
-                      child:
-                          getMainButtonStyle(onPress, "ADICIONAR AO CARRINHO")),
+                  child: new ProgressButton(
+                    defaultWidget: const Text('ADICIONAR AO CARRINHO',
+                        style: TextStyle(color: Colors.white)),
+                    progressWidget: const CircularProgressIndicator(
+                        valueColor:
+                            AlwaysStoppedAnimation<Color>(Colors.white)),
+                    color: MainButtonColor,
+                    height: 45.0,
+                    borderRadius: 24,
+                    animate: false,
+                    onPressed: addCart(),
+//                        () async {
+//                      int score = await Future.delayed(
+//                          const Duration(milliseconds: 4000), () => 42);
+//                    },
+                  ),
                 ),
               ),
               new Padding(padding: new EdgeInsets.only(top: 8.0)),
             ])));
+  }
+
+  addCart() {
+
   }
 }

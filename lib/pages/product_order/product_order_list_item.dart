@@ -1,14 +1,16 @@
-import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
+import 'package:desafio_jusbrasil_app/model/ProductOrderItemModel.dart';
 import 'package:desafio_jusbrasil_app/style/text_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ProductListItem extends StatelessWidget {
-  final ProductModel _productModel;
+class ProductOrderListItem extends StatelessWidget {
+  final ProductOrderItemModel _productOrderItemModel;
   final Function selectItem;
 
-  ProductListItem(this._productModel, this.selectItem);
+  ProductOrderListItem(this._productOrderItemModel, this.selectItem);
+
+  get _goRomoveProductOrder => null;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class ProductListItem extends StatelessWidget {
               Container(
                 margin: EdgeInsets.all(10.0),
                 child: new Image.network(
-                  _productModel.imagePath,
+                  _productOrderItemModel.imagePathProduct,
                   fit: BoxFit.fill,
                   height: 90,
                   width: 90,
@@ -34,34 +36,24 @@ class ProductListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        _productModel.name,
+                        _productOrderItemModel.nameProduct,
                         style: getBlackTitleStyle(),
                       ),
                       new Padding(padding: new EdgeInsets.only(top: 3.0)),
                       Text(
-                        _productModel.getPriceFormatMoney(),
+                        "Quantidade: "+_productOrderItemModel.quantity.toString(),
                         style: getBlackTextStyle(),
                       ),
+                      new Padding(padding: new EdgeInsets.only(top: 3.0)),
+                      Text(
+                        "Valor Unitário: "+_productOrderItemModel.getPriceFormatMoney(),
+                        style: getBlackTextStyle(),
+                      )
                     ]),
               ),
-              Expanded(
-                child: new Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SvgPicture.asset(
-                      'assets/images/next.svg',
-                      width: 12.0,
-                      height: 12.0,
-                      allowDrawingOutsideViewBox: true,
-                    ),
-                    new Padding(padding: new EdgeInsets.only(right: 10.0))
-                  ],
-                ),
-              )
             ],
           ),
-          onTap: () => selectItem(_productModel),
+          onTap: () => selectItem(_productOrderItemModel),
         ));
   }
 }

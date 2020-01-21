@@ -1,4 +1,4 @@
-import 'package:desafio_jusbrasil_app/model/ProductList.dart';
+import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list_item.dart';
 import 'package:flutter/material.dart';
 
