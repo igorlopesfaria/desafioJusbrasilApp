@@ -28,10 +28,10 @@ class ProductDetailBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: BlocProvider<ProductDetailBloc>(
-            builder: (context) => ProducDetailBloc(productOrderRepository: productOrderRepository),
-            child: ProductOrderListPage()
-        )
+//        home: BlocProvider<ProductDetailBloc>(
+//            builder: (context) => ProducDetailBloc(productOrderRepository: productOrderRepository),
+//            child: ProductOrderListPage()
+//        )
     );
   }
 }
