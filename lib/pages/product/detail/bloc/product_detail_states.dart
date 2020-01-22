@@ -10,21 +10,18 @@ abstract class ProductDetailStates extends Equatable {
   List<Object> get props => [];
 }
 
-class ProductOrderCreateStart extends ProductDetailStates {}
+class ProductOrderCreateStart extends ProductDetailStates {
+
+}
+
+class ProductOrderCreatePressed extends ProductDetailStates {
+
+}
+
 
 class ProductOrderCreateLoading extends ProductDetailStates {}
 
 class ProductOrderCreateError extends ProductDetailStates {}
 
-class ProductOrderCreateLoaded extends ProductDetailStates {
-  final ProductOrderItemModel productOrderItemModel;
+class ProductOrderCreateLoaded extends ProductDetailStates {}
 
-  const ProductOrderCreateLoaded({@required this.productOrderItemModel})
-      : assert(productOrderItemModel != null);
-
-  @override
-  Object get prop => productOrderItemModel;
-
-  @override
-  String toString() => 'PostLoaded { posts: ${productOrderItemModel} }';
-}

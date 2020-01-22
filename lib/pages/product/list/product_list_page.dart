@@ -1,6 +1,7 @@
 import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
 import 'package:desafio_jusbrasil_app/pages/comon_view/empty_list.dart';
 import 'package:desafio_jusbrasil_app/pages/comon_view/error_default.dart';
+import 'package:desafio_jusbrasil_app/pages/product/detail/product_detail_builder.dart';
 import 'package:desafio_jusbrasil_app/pages/product/detail/product_detail_page.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/bloc/product_list_bloc.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list.dart';
@@ -102,7 +103,7 @@ class _ProductListPage extends State<ProductListPage> {
 
   void _productSelected(ProductModel productModel) {
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => ProductDetail(productModel)));
+        MaterialPageRoute(builder: (context) => ProductDetailBuilder(productModel)));
     print("Selecionado produto" + productModel.name);
   }
 

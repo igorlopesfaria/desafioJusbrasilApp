@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:desafio_jusbrasil_app/bloc/bloc.dart';
+import 'package:desafio_jusbrasil_app/model/ProductModel.dart';
+import 'package:desafio_jusbrasil_app/pages/product/detail/product_detail_page.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/bloc/product_list_bloc.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list_page.dart';
 import 'package:desafio_jusbrasil_app/pages/product_order/product_order_list_page.dart';
@@ -11,11 +13,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 
+import 'bloc/product_detail_bloc.dart';
+
 
 class ProductDetailBuilder extends StatelessWidget {
   ProductOrderRepository productOrderRepository;
+  ProductModel _productModel;
 
-  ProductOrderListBuilder() {
+  ProductDetailBuilder(ProductModel productModel) {
+    this._productModel = productModel;
     BlocSupervisor.delegate = DesafioJusbrasilBlocDelegate();
     productOrderRepository = ProductOrderRepository(
         client: DesafioJusbrasilApiClient(
@@ -28,10 +34,11 @@ class ProductDetailBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-//        home: BlocProvider<ProductDetailBloc>(
-//            builder: (context) => ProducDetailBloc(productOrderRepository: productOrderRepository),
-//            child: ProductOrderListPage()
-//        )
+        home: BlocProvider<ProductDetailBloc>(
+            builder: (context) => ProductDetailBloc(productOrderRepository: productOrderRepository),
+            child: ProductDetail(this._productModel)
+        )
     );
   }
 }
+//        ) 8784-6184
