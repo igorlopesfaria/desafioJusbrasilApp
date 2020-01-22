@@ -166,14 +166,25 @@ class _ProductDetailState extends State<ProductDetail> {
         padding: EdgeInsets.only(left: 20.0, right: 20.0),
         child: new Align(
           alignment: Alignment.center,
-          child: new RaisedButton(
-            color: MainButtonColor,
-            shape: RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(18.0)),
-            onPressed: () => addCart(state),
-            child: Text(getStateText(state),
-                style: TextStyle(color: WhiteColor, fontSize: 15)),
-          ),
+            child: ButtonTheme(
+                minWidth: double.infinity,
+                height: 45.0,
+              child: RaisedButton(
+                color: MainButtonColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(18.0)
+                ),
+                onPressed: () => addCart(state),
+                  child: Text(
+                      getStateText(state),
+                      style: TextStyle(
+                          color: WhiteColor,
+                          fontSize: 15)
+                  )
+              ),
+
+
+            )
         ),
       ),
       new Padding(padding: new EdgeInsets.only(top: 8.0)),
