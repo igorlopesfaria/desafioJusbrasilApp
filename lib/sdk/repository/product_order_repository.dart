@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:desafio_jusbrasil_app/model/OrderOpenedModel.dart';
 import 'package:desafio_jusbrasil_app/sdk/api/desafiojusbrasil_api_client.dart';
 import 'package:desafio_jusbrasil_app/sdk/data/request/product_order_request.dart';
 import 'package:desafio_jusbrasil_app/sdk/data/response/order_opened_response.dart';
@@ -26,4 +27,10 @@ class ProductOrderRepository {
   Future<Void> createProductOrder(ProductOrderRequest productOrderRequest) async {
     return await client.createProductOrder(productOrderRequest);
   }
+
+  Future<Void> finishOrder(int idOrder) async {
+    return await client.finishProductOrder(idOrder);
+  }
+
+
 }

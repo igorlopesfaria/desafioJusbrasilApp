@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:desafio_jusbrasil_app/bloc/bloc.dart';
+import 'package:desafio_jusbrasil_app/pages/order/bloc/order_bloc.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/bloc/product_list_bloc.dart';
 import 'package:desafio_jusbrasil_app/pages/product/list/product_list_page.dart';
 import 'package:desafio_jusbrasil_app/pages/product_order/product_order_list_page.dart';
@@ -31,7 +32,10 @@ class ProductOrderListBuilder extends StatelessWidget {
     return MaterialApp(
         home: BlocProvider<ProductOrderListBloc>(
             builder: (context) => ProductOrderListBloc(productOrderRepository: productOrderRepository),
-            child: ProductOrderListPage()
+            child: BlocProvider<OrderBloc>(
+                builder: (context) => OrderBloc(productOrderRepository: productOrderRepository),
+                child:ProductOrderListPage()
+            )
         )
     );
   }

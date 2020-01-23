@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ffi';
 
+import 'package:desafio_jusbrasil_app/model/OrderOpenedModel.dart';
 import 'package:desafio_jusbrasil_app/sdk/data/request/product_order_request.dart';
 import 'package:desafio_jusbrasil_app/sdk/data/response/order_opened_response.dart';
 import 'package:desafio_jusbrasil_app/sdk/data/response/product_order_item_response.dart';
@@ -85,6 +86,18 @@ class DesafioJusbrasilApiClient {
         createProductOrderUrl,
         headers: {'Content-Type': 'application/json'},
         body: json.encode(productOrderRequest)
+    );
+
+    if (productOrderResponse.statusCode != 200) {
+      throw Exception('error getting product orders');
+    }
+  }
+
+  String finishOrderUrl = '$baseUrl/orders/';
+
+  Future<Void> finishProductOrder(int idOrder) async {
+    final productOrderResponse = await this.httpClient.put(
+        finishOrderUrl+idOrder.toString()
     );
 
     if (productOrderResponse.statusCode != 200) {

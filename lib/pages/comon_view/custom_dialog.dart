@@ -6,11 +6,14 @@ class CustomDialog extends StatelessWidget {
   final String title, description, buttonText;
   final SvgPicture image;
 
+  final Function onContinuePress;
+
   CustomDialog({
     @required this.title,
     @required this.description,
     @required this.buttonText,
     this.image,
+    this.onContinuePress
   });
 
   @override
@@ -73,7 +76,10 @@ class CustomDialog extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 child: FlatButton(
                   onPressed: () {
-                    Navigator.of(context).pop(); // To close the dialog
+                      if(onContinuePress != null)
+                        onContinuePress();
+
+                      Navigator.of(context).pop(); // To close the dialog
                   },
                   child: Text(buttonText),
                 ),

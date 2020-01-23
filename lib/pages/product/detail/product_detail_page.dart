@@ -50,7 +50,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 title: Text("Detalhes do produto"),
                 leading: IconButton(
                   icon: Icon(Icons.arrow_back),
-                  onPressed: () => Navigator.pop(context, false),
+                  onPressed: () =>  Navigator.of(context).pop(),
                 )),
             body: BlocBuilder<ProductDetailBloc, ProductDetailStates>(
                 builder: (context, state) {
